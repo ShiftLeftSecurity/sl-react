@@ -1,3 +1,4 @@
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -25,14 +26,14 @@ class App extends Component {
     })
   }
 
-  function createMarkup() {
+  createMarkup() {
     return {__html: 'javascript:alert(1)'};
   }
 
   render() {
     return (
       <div className="App">
-        <div dangerouslySetInnerHTML={createMarkup()} />
+        <div dangerouslySetInnerHTML={this.createMarkup()} />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>

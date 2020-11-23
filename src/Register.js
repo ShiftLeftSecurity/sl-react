@@ -9,6 +9,7 @@ class Register extends Component {
     };
     this.formSubmitted = this.formSubmitted.bind(this);
     this.input = React.createRef();
+    this.profileUrl = "";
   }
 
   formSubmitted(event) {
@@ -36,7 +37,8 @@ class Register extends Component {
         throw 42;
       }
     }).then(function(loginResponse) {
-      this.props.router.push('/login')
+      this.props.router.push('/login');
+      this.props.profileUrl = loginResponse.profileUrl;
     }.bind(this)).catch(function(reason) {
       alert("Try again!");
     });
@@ -72,6 +74,7 @@ class Register extends Component {
             Uncontrolled Name:
             <input type="text" ref={this.input} />
           </label>
+           <a href={profileUrl}>Profile Link</a>
           <button type="submit" className="btn btn-default">Submit</button>
         </form>
       </div>

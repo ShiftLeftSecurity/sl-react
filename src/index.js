@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+  	<a href="javascript: alert(1)">Click me!</a>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
